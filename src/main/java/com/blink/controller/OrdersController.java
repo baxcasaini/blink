@@ -31,7 +31,7 @@ public class OrdersController {
 
         repo.saveObj(order, "blink");
 
-        return null;
+        return "OK";
     }
 }
 
