@@ -5,6 +5,7 @@ import com.blink.repository.GenericObjectRepository;
 import com.google.gson.Gson;
 import it.snam.pimos.common.logger.Logp;
 import it.snam.pimos.common.logger.LogpLevel;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
@@ -12,6 +13,7 @@ import org.springframework.web.client.RestTemplate;
  * @author Casini Fabio
  *
  */
+@Slf4j
 @RestController
 @RequestMapping(value = "/api")
 public class OrdersController {
@@ -28,10 +30,15 @@ public class OrdersController {
 
     @PostMapping(value = "/enqueueOrders")
     public String receiveOrders(@RequestBody String order) {
+        try {
 
-        repo.saveObj(order, "blink");
+            repo.saveObj(order, "blink");
 
-        return "OK";
+            return "OK";
+        }catch(Exception e){
+            log.error("{}", e);
+        }
+        return "KO";
     }
 }
 
