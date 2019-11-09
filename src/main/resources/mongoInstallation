@@ -1,0 +1,289 @@
+Microsoft Windows [Versione 10.0.17763.805]
+(c) 2018 Microsoft Corporation. Tutti i diritti sono riservati.
+
+C:\Users\fabio.casini>ssh -i C:\Users\fabio.casini\Desktop\PimosProject\PimosBitBucket\soapWs\cartesio-web-master\pms-cartesio-web-service\sources\blink\src\main\resources\EC2KeypairBlink.pem ec2-user@ec2-3-16-169-191.us-east-2.compute.amazonaws.com
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the ECDSA key sent by the remote host is
+SHA256:HImexDglQObtk6l5yEbkLEIfROQiGex4T+FBGyohChw.
+Please contact your system administrator.
+Add correct host key in C:\\Users\\fabio.casini/.ssh/known_hosts to get rid of this message.
+Offending ECDSA key in C:\\Users\\fabio.casini/.ssh/known_hosts:3
+ECDSA host key for ec2-3-16-169-191.us-east-2.compute.amazonaws.com has changed and you have requested strict checking.
+Host key verification failed.
+
+C:\Users\fabio.casini>ssh -i C:\Users\fabio.casini\Desktop\PimosProject\PimosBitBucket\soapWs\cartesio-web-master\pms-cartesio-web-service\sources\blink\src\main\resources\EC2KeypairBlink.pem ec2-user@ec2-3-16-169-191.us-east-2.compute.amazonaws.com
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the ECDSA key sent by the remote host is
+SHA256:HImexDglQObtk6l5yEbkLEIfROQiGex4T+FBGyohChw.
+Please contact your system administrator.
+Add correct host key in C:\\Users\\fabio.casini/.ssh/known_hosts to get rid of this message.
+Offending ECDSA key in C:\\Users\\fabio.casini/.ssh/known_hosts:3
+ECDSA host key for ec2-3-16-169-191.us-east-2.compute.amazonaws.com has changed and you have requested strict checking.
+Host key verification failed.
+
+C:\Users\fabio.casini>ssh -i C:\Users\fabio.casini\Desktop\PimosProject\PimosBitBucket\soapWs\cartesio-web-master\pms-cartesio-web-service\sources\blink\src\main\resources\EC2KeypairBlink.pem ec2-user@ec2-18-217-144-112.us-east-2.compute.amazonaws.com
+The authenticity of host 'ec2-18-217-144-112.us-east-2.compute.amazonaws.com (18.217.144.112)' can't be established.
+ECDSA key fingerprint is SHA256:5xty0uBzkHX9GK3ZB+MYb7Eq6pBhOIk93s6rjirgbPQ.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added 'ec2-18-217-144-112.us-east-2.compute.amazonaws.com,18.217.144.112' (ECDSA) to the list of known hosts.
+Last login: Wed Nov  6 19:36:15 2019 from 93-45-65-122.ip101.fastwebnet.it
+Last login: Wed Nov  6 19:36:15 2019 from 93-45-65-122.ip101.fastwebnet.it
+
+       __|  __|_  )
+       _|  (     /   Amazon Linux AMI
+      ___|\___|___|
+
+https://aws.amazon.com/amazon-linux-ami/2018.03-release-notes/
+10 package(s) needed for security, out of 18 available
+Run "sudo yum update" to apply all updates.
+[ec2-user@ip-172-31-22-56 ~]$ vi /etc/yum.repos.d/mongodb-org-3.0.repo
+[ec2-user@ip-172-31-22-56 ~]$ cd /etc/yum.repos.d/mongodb-org-3.0.repo
+-bash: cd: /etc/yum.repos.d/mongodb-org-3.0.repo: No such file or directory
+[ec2-user@ip-172-31-22-56 ~]$ ls
+blink-0.0.1-SNAPSHOT.jar
+[ec2-user@ip-172-31-22-56 ~]$ cd ..
+[ec2-user@ip-172-31-22-56 home]$ ls
+ec2-user
+[ec2-user@ip-172-31-22-56 home]$ cd ..
+[ec2-user@ip-172-31-22-56 /]$ ld
+ld: no input files
+[ec2-user@ip-172-31-22-56 /]$ ls
+bin   cgroup  etc   lib    local       media  opt   root  sbin     srv  tmp  var
+boot  dev     home  lib64  lost+found  mnt    proc  run   selinux  sys  usr
+[ec2-user@ip-172-31-22-56 /]$ cd etc
+[ec2-user@ip-172-31-22-56 etc]$ ls
+acpi                       dumpdates            jvm-commmon     passwd            selinux
+adjtime                    e2fsck.conf          krb5.conf       passwd-           services
+aliases                    environment          krb5.conf.d     pkcs11            sestatus.conf
+aliases.db                 ethers               ld.so.cache     pki               shadow
+alternatives               exports              ld.so.conf      pm                shadow-
+amazon                     exports.d            ld.so.conf.d    popt.d            shells
+anacrontab                 filesystems          libaudit.conf   ppp               skel
+asound.conf                fonts                libreport       prelink.conf.d    smrsh
+at.deny                    fstab                libuser.conf    printcap          ssh
+audisp                     gcrypt               localtime       profile           ssl
+audit                      gnupg                login.defs      profile.d         statetab
+bash_completion.d          GREP_COLORS          logrotate.conf  protocols         statetab.d
+bashrc                     groff                logrotate.d     rc                sudo.conf
+blkid                      group                lvm             rc0.d             sudoers
+cgconfig.conf              group-               magic           rc1.d             sudoers.d
+cgrules.conf               grub.conf            mail            rc2.d             sudo-ldap.conf
+cgsnapshot_blacklist.conf  gshadow              mailcap         rc3.d             sysconfig
+chkconfig.d                gshadow-             man_db.conf     rc4.d             sysctl.conf
+cloud                      gss                  maven           rc5.d             sysctl.d
+cron.d                     gssapi_mech.conf     mime.types      rc6.d             system-release
+cron.daily                 hibagent-config.cfg  mke2fs.conf     rc.d              system-release-cpe
+cron.deny                  hibinit-config.cfg   modprobe.d      rc.local          terminfo
+cron.hourly                host.conf            motd            rc.sysinit        tmpfiles.d
+cron.monthly               hosts                motd.rpmsave    request-key.conf  udev
+crontab                    hosts.allow          mtab            request-key.d     update-motd.d
+cron.weekly                hosts.deny           nanorc          resolv.conf       vimrc
+csh.cshrc                  idmapd.conf          netconfig       rmt               virc
+csh.login                  image-id             NetworkManager  rpc               wgetrc
+dbus-1                     init                 networks        rpm               X11
+default                    init.d               nfsmount.conf   rsyslog.conf      xdg
+depmod.d                   inittab              nsswitch.conf   rsyslog.d         xinetd.d
+dhcp                       inputrc              ntp             rwtab             yum
+DIR_COLORS                 iproute2             ntp.conf        rwtab.d           yum.conf
+DIR_COLORS.256color        issue                openldap        sasl2             yum.repos.d
+DIR_COLORS.lightbgcolor    issue.net            opt             screenrc
+dracut.conf                java                 os-release      securetty
+dracut.conf.d              jvm                  pam.d           security
+[ec2-user@ip-172-31-22-56 etc]$ cd yum.repos.d
+[ec2-user@ip-172-31-22-56 yum.repos.d]$ ls
+amzn-main.repo  amzn-nosrc.repo  amzn-preview.repo  amzn-updates.repo  epel.repo  epel-testing.repo
+[ec2-user@ip-172-31-22-56 yum.repos.d]$ vi mongodb-org-3.0.repo
+[ec2-user@ip-172-31-22-56 yum.repos.d]$ [ec2-user@ip-172-31-22-56 yum.repos.d]$ touch mongodb-org-3.0.repo
+touch: cannot touch ‘mongodb-org-3.0.repo’: Permission denied
+[ec2-user@ip-172-31-22-56 yum.repos.d]$ sudo
+usage: sudo [-D level] -h | -K | -k | -V
+usage: sudo -v [-AknS] [-D level] [-g groupname|#gid] [-p prompt] [-u user name|#uid]
+usage: sudo -l[l] [-AknS] [-D level] [-g groupname|#gid] [-p prompt] [-U user name] [-u user name|#uid] [-g
+            groupname|#gid] [command]
+usage: sudo [-AbEHknPS] [-r role] [-t type] [-C fd] [-D level] [-g groupname|#gid] [-p prompt] [-u user name|#uid]
+            [-g groupname|#gid] [VAR=value] [-i|-s] [<command>]
+usage: sudo -e [-AknS] [-r role] [-t type] [-C fd] [-D level] [-g groupname|#gid] [-p prompt] [-u user name|#uid]
+            file ...
+[ec2-user@ip-172-31-22-56 yum.repos.d]$ sudo admin
+sudo: admin: command not found
+[ec2-user@ip-172-31-22-56 yum.repos.d]$ passwd root Acroma.10
+passwd: Only root can specify a user name.
+[ec2-user@ip-172-31-22-56 yum.repos.d]$ sudo su
+[root@ip-172-31-22-56 yum.repos.d]# passwd root
+Changing password for user root.
+New password:
+BAD PASSWORD: The password fails the dictionary check - it is based on a (reversed) dictionary word
+Retype new password:
+Sorry, passwords do not match.
+New password:
+BAD PASSWORD: The password fails the dictionary check - it is based on a (reversed) dictionary word
+Retype new password:
+Sorry, passwords do not match.
+New password:
+Retype new password:
+[root@ip-172-31-22-56 yum.repos.d]# ls
+amzn-main.repo  amzn-nosrc.repo  amzn-preview.repo  amzn-updates.repo  epel.repo  epel-testing.repo
+[root@ip-172-31-22-56 yum.repos.d]# vi mongodb-org-3.0.repo
+[root@ip-172-31-22-56 yum.repos.d]# ls
+amzn-main.repo   amzn-preview.repo  epel.repo          mongodb-org-3.0.repo
+amzn-nosrc.repo  amzn-updates.repo  epel-testing.repo
+[root@ip-172-31-22-56 yum.repos.d]# cat mongodb-org-3.0.repo
+[mongodb-org-3.0]
+name=MongoDB Repository
+baseurl=https://repo.mongodb.org/yum/amazon/2013.03/mongodb-org/3.0/x86_64/
+gpgcheck=0
+enabled=1
+[root@ip-172-31-22-56 yum.repos.d]# sudo yum install -y mongodb-org
+Loaded plugins: priorities, update-motd, upgrade-helper
+amzn-main                                                                                     | 2.1 kB  00:00:00
+amzn-updates                                                                                  | 2.5 kB  00:00:00
+mongodb-org-3.0                                                                               | 2.5 kB  00:00:00
+mongodb-org-3.0/primary_db                                                                    |  87 kB  00:00:00
+Resolving Dependencies
+--> Running transaction check
+---> Package mongodb-org.x86_64 0:3.0.15-1.amzn1 will be installed
+--> Processing Dependency: mongodb-org-tools = 3.0.15 for package: mongodb-org-3.0.15-1.amzn1.x86_64
+--> Processing Dependency: mongodb-org-shell = 3.0.15 for package: mongodb-org-3.0.15-1.amzn1.x86_64
+--> Processing Dependency: mongodb-org-server = 3.0.15 for package: mongodb-org-3.0.15-1.amzn1.x86_64
+--> Processing Dependency: mongodb-org-mongos = 3.0.15 for package: mongodb-org-3.0.15-1.amzn1.x86_64
+--> Running transaction check
+---> Package mongodb-org-mongos.x86_64 0:3.0.15-1.amzn1 will be installed
+---> Package mongodb-org-server.x86_64 0:3.0.15-1.amzn1 will be installed
+---> Package mongodb-org-shell.x86_64 0:3.0.15-1.amzn1 will be installed
+---> Package mongodb-org-tools.x86_64 0:3.0.15-1.amzn1 will be installed
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+=====================================================================================================================
+ Package                         Arch                Version                      Repository                    Size
+=====================================================================================================================
+Installing:
+ mongodb-org                     x86_64              3.0.15-1.amzn1               mongodb-org-3.0              5.8 k
+Installing for dependencies:
+ mongodb-org-mongos              x86_64              3.0.15-1.amzn1               mongodb-org-3.0              4.1 M
+ mongodb-org-server              x86_64              3.0.15-1.amzn1               mongodb-org-3.0              8.6 M
+ mongodb-org-shell               x86_64              3.0.15-1.amzn1               mongodb-org-3.0              4.4 M
+ mongodb-org-tools               x86_64              3.0.15-1.amzn1               mongodb-org-3.0               28 M
+
+Transaction Summary
+=====================================================================================================================
+Install  1 Package (+4 Dependent packages)
+
+Total download size: 45 M
+Installed size: 118 M
+Downloading packages:
+(1/5): mongodb-org-3.0.15-1.amzn1.x86_64.rpm                                                  | 5.8 kB  00:00:00
+(2/5): mongodb-org-mongos-3.0.15-1.amzn1.x86_64.rpm                                           | 4.1 MB  00:00:00
+(3/5): mongodb-org-server-3.0.15-1.amzn1.x86_64.rpm                                           | 8.6 MB  00:00:00
+(4/5): mongodb-org-shell-3.0.15-1.amzn1.x86_64.rpm                                            | 4.4 MB  00:00:00
+(5/5): mongodb-org-tools-3.0.15-1.amzn1.x86_64.rpm                                            |  28 MB  00:00:00
+---------------------------------------------------------------------------------------------------------------------
+Total                                                                                 29 MB/s |  45 MB  00:00:01
+Running transaction check
+Running transaction test
+Transaction test succeeded
+Running transaction
+  Installing : mongodb-org-server-3.0.15-1.amzn1.x86_64                                                          1/5
+  Installing : mongodb-org-tools-3.0.15-1.amzn1.x86_64                                                           2/5
+  Installing : mongodb-org-mongos-3.0.15-1.amzn1.x86_64                                                          3/5
+  Installing : mongodb-org-shell-3.0.15-1.amzn1.x86_64                                                           4/5
+  Installing : mongodb-org-3.0.15-1.amzn1.x86_64                                                                 5/5
+  Verifying  : mongodb-org-shell-3.0.15-1.amzn1.x86_64                                                           1/5
+  Verifying  : mongodb-org-mongos-3.0.15-1.amzn1.x86_64                                                          2/5
+  Verifying  : mongodb-org-tools-3.0.15-1.amzn1.x86_64                                                           3/5
+  Verifying  : mongodb-org-server-3.0.15-1.amzn1.x86_64                                                          4/5
+  Verifying  : mongodb-org-3.0.15-1.amzn1.x86_64                                                                 5/5
+
+Installed:
+  mongodb-org.x86_64 0:3.0.15-1.amzn1
+
+Dependency Installed:
+  mongodb-org-mongos.x86_64 0:3.0.15-1.amzn1                mongodb-org-server.x86_64 0:3.0.15-1.amzn1
+  mongodb-org-shell.x86_64 0:3.0.15-1.amzn1                 mongodb-org-tools.x86_64 0:3.0.15-1.amzn1
+
+Complete!
+[root@ip-172-31-22-56 yum.repos.d]#
+[root@ip-172-31-22-56 yum.repos.d]# sudo service mongod start
+Starting mongod:                                           [  OK  ]
+[root@ip-172-31-22-56 yum.repos.d]#
+[root@ip-172-31-22-56 yum.repos.d]# sudo chkconfig mongod on
+[root@ip-172-31-22-56 yum.repos.d]# mongo
+MongoDB shell version: 3.0.15
+connecting to: test
+Welcome to the MongoDB shell.
+For interactive help, type "help".
+For more comprehensive documentation, see
+        http://docs.mongodb.org/
+Questions? Try the support group
+        http://groups.google.com/group/mongodb-user
+>
+u>use admin
+switched to db admin
+>
+> db.createUser(
+... {
+... user: "myUserAdmin",
+... pwd: "abc123",
+... roles: [ { role: "userAdminAnyDatabase", db: "admin" } ]
+... }
+... )
+Successfully added user: {
+        "user" : "myUserAdmin",
+        "roles" : [
+                {
+                        "role" : "userAdminAnyDatabase",
+                        "db" : "admin"
+                }
+        ]
+}
+> use blink
+switched to db blink
+>
+> security:
+... authorization: "enabled"
+enabled
+>
+>
+> service mongod restart
+2019-11-07T21:11:41.681+0000 E QUERY    SyntaxError: Unexpected identifier
+> service mongod restart
+2019-11-07T21:12:02.987+0000 E QUERY    SyntaxError: Unexpected identifier
+> service mongodb restart
+2019-11-07T21:12:12.708+0000 E QUERY    SyntaxError: Unexpected identifier
+> sudo
+2019-11-07T21:13:06.147+0000 E QUERY    ReferenceError: sudo is not defined
+    at (shell):1:1
+e>^C
+bye
+[root@ip-172-31-22-56 yum.repos.d]# ^C
+[root@ip-172-31-22-56 yum.repos.d]# service mongod restart
+Stopping mongod: ^[[B^[[B^[[B                              [  OK  ]
+Starting mongod:                                           [  OK  ]
+[root@ip-172-31-22-56 yum.repos.d]# vi /etc/mongod.conf
+[root@ip-172-31-22-56 yum.repos.d]#
+
+
+
+
+-------------------
+
+
+
+
+devo scaricare word press
+    nel pannello di controllo c'è installa plugin e gli do il path del rar del plugin
+
+    al db phpmyadmin per accedere al db di wordpress
+
+        woocommerce poi posso accedere al codice opensource
