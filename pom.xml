@@ -9,25 +9,11 @@
         <version>2.1.6.RELEASE</version>
         <relativePath /> <!-- lookup parent from repository -->
     </parent>
-    <groupId>it.snam.pimos</groupId>
-    <artifactId>pms-gateway104</artifactId>
+    <groupId>com.blink</groupId>
+    <artifactId>blink</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>pms-gateway104</name>
-    <description>Iec104 manager</description>
-
-    <properties>
-        <fabric8.mode>openshift</fabric8.mode>
-        <fabric8.generator.fromMode>istag</fabric8.generator.fromMode>
-        <fabric8.generator.from>redhat-openjdk18-openshift:1.3</fabric8.generator.from>
-        <fabric8.skipResourceValidation>true</fabric8.skipResourceValidation>
-
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.target>1.8</maven.compiler.target>
-        <maven.compiler.source>1.8</maven.compiler.source>
-
-        <version.fabric8.plugin>3.5.38</version.fabric8.plugin>
-        <java.version>1.8</java.version>
-    </properties>
+    <name>blink</name>
+    <description>Blink manager operations</description>
 
     <dependencies>
         <dependency>
@@ -85,6 +71,14 @@
             <groupId>org.springframework</groupId>
             <artifactId>spring-web</artifactId>
             <version>5.1.9.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-mongodb</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
         </dependency>
     </dependencies>
 

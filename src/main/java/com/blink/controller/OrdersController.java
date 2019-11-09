@@ -1,6 +1,11 @@
 package com.blink.controller;
 
+import com.blink.config.RestTemplateConfiguration;
+import com.google.gson.Gson;
+import it.snam.pimos.common.logger.Logp;
+import it.snam.pimos.common.logger.LogpLevel;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.client.RestTemplate;
 
 /**
  * @author Casini Fabio
@@ -10,8 +15,17 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping(value = "/api")
 public class OrdersController {
 
+    private Gson gson;
+    private RestTemplate restTemplate;
+
+    public OrdersController(RestTemplateConfiguration restTemplateConfiguration) {
+        restTemplate = restTemplateConfiguration.getRestTemplateWithTimeout();
+        this.gson = new Gson();
+    }
+
     @PostMapping(value = "/enqueueOrders")
-    public String sayHelloWorld(@RequestBody String order) {
+    public String receiveOrders(@RequestBody String order) {
+
         return null;
     }
 }
