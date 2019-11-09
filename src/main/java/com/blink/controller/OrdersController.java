@@ -37,7 +37,7 @@ public class OrdersController {
 
 
 //scp -i
-// C:\Users\fabio.casini\Desktop\PimosProject\PimosBitBucket\soapWs\cartesio-web-master\pms-cartesio-web-service\sources\blink\src\main\resources\EC2KeypairBlink.pem
+// C:\Users\fabio.casini\Desktop\blink\blink-dev\blink\blink\src\main\resources\EC2KeypairBlink.pem
 // C:\Users\fabio.casini\Desktop\PimosProject\PimosBitBucket\soapWs\cartesio-web-master\pms-cartesio-web-service\sources\blink\target\blink-0.0.1-SNAPSHOT.jar
 // ec2-user@ec2-3-16-169-191.us-east-2.compute.amazonaws.com:~
 
