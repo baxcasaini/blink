@@ -39,6 +39,7 @@ public class BlinkApiApplication
 }
 
 
-//scp -i C:\Users\fabio\Desktop\EC2\src\main\resources\BlinkKeys.pem C:\Users\fabio\Desktop\EC2\target\blink-0.0.1-SNAPSHOT.jar ec2-user@ec2-35-180-201-108.eu-west-3.compute.amazonaws.com:~
-//ssh -i C:\Users\fabio\Desktop\EC2\src\main\resources\BlinkKeys.pem ec2-user@ec2-35-180-201-108.eu-west-3.compute.amazonaws.com
+//scp -i C:\Users\fabio\Desktop\EC2\src\main\resources\BlinkKeys.pem C:\Users\fabio\Desktop\EC2\target\blink-0.0.1-SNAPSHOT.jar ec2-user@ec2-35-180-201-185.eu-west-3.compute.amazonaws.com:~
+//ssh -i C:\Users\fabio\Desktop\EC2\src\main\resources\BlinkKeys.pem ec2-user@ec2-35-180-201-185.eu-west-3.compute.amazonaws.com
 //java -jar blink-0.0.1-SNAPSHOT.jar
+//ssh -i C:\Users\fabio\Desktop\EC2\src\main\resources\BlinkKeys.pem ubuntu@ec2-user@ec2-35-180-201-108.eu-west-3.compute.amazonaws.com:~
