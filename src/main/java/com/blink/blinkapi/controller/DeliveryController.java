@@ -11,7 +11,8 @@ import com.blink.blinkapi.repository.DeliveryRepository;
 
 @RestController
 @RequestMapping("/deliveries")
-@CrossOrigin(origins = "http://localhost:4200")
+//@CrossOrigin(origins = "http://blink-s3.s3-website.eu-west-3.amazonaws.com")
+@CrossOrigin(origins = "http://localhost:8080")
 public class DeliveryController {
 
     @Autowired
@@ -19,14 +20,11 @@ public class DeliveryController {
 
     @GetMapping
     public List<Delivery> getAll() {
-    	
         return getListDeliveryFromDTO(deliveryRepository.findAll());
     }
 
     @GetMapping(value = "/check")
     public String check() {
-
-
         return "Hello JavaSolutionsGuide Readers";
     }
 
@@ -44,6 +42,11 @@ public class DeliveryController {
     @DeleteMapping("/{id}")
     public void delete(@PathVariable("id") String id) {
         deliveryRepository.deleteById(id);
+    }
+
+    @DeleteMapping("/deleteAllDeliveries")
+    public void deleteAll() {
+        deliveryRepository.deleteAll();
     }
 
     @PatchMapping("/{id}")
