@@ -2,6 +2,7 @@ package com.blink.blinkapi.model;
 
 import java.util.Objects;
 
+import lombok.Data;
 import org.springframework.validation.annotation.Validated;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -11,6 +12,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 /**
  * Parcel
  */
+@Data
 @Validated
 public class Parcel   {
   @JsonProperty("description")
@@ -60,105 +62,4 @@ public class Parcel   {
   @JsonProperty("dimension")
   private Dimension dimension = null;
 
-  public Parcel description(String description) {
-    this.description = description;
-    return this;
-  }
-
- 
-  public String getDescription() {
-	return description;
-}
-
-
-public void setDescription(String description) {
-	this.description = description;
-}
-
-
-public String getPrice() {
-	return price;
-}
-
-
-public void setPrice(String price) {
-	this.price = price;
-}
-
-
-public TypeEnum getType() {
-	return type;
-}
-
-
-public void setType(TypeEnum type) {
-	this.type = type;
-}
-
-
-public Integer getWeight() {
-	return weight;
-}
-
-
-public void setWeight(Integer weight) {
-	this.weight = weight;
-}
-
-
-public Dimension getDimension() {
-	return dimension;
-}
-
-
-public void setDimension(Dimension dimension) {
-	this.dimension = dimension;
-}
-
-
-@Override
-  public boolean equals(Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    Parcel parcel = (Parcel) o;
-    return Objects.equals(this.description, parcel.description) &&
-        Objects.equals(this.price, parcel.price) &&
-        Objects.equals(this.type, parcel.type) &&
-        Objects.equals(this.weight, parcel.weight) &&
-        Objects.equals(this.dimension, parcel.dimension);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(description, price, type, weight, dimension);
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class Parcel {\n");
-    
-    sb.append("    description: ").append(toIndentedString(description)).append("\n");
-    sb.append("    price: ").append(toIndentedString(price)).append("\n");
-    sb.append("    type: ").append(toIndentedString(type)).append("\n");
-    sb.append("    weight: ").append(toIndentedString(weight)).append("\n");
-    sb.append("    dimension: ").append(toIndentedString(dimension)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
 }
