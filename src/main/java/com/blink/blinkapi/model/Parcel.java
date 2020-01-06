@@ -54,7 +54,7 @@ public class Parcel   {
     }
   }
   @JsonProperty("type")
-  private TypeEnum type = TypeEnum.COMMON;
+  private String type = null;
 
   @JsonProperty("weight")
   private Integer weight = null;

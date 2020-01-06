@@ -4,10 +4,12 @@ import java.util.Date;
 import java.util.List;
 
 import lombok.Data;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Data
+@Slf4j
 @Document(collection = "delivery")
 public class DeliveryDTO {
 	@Id
@@ -18,7 +20,17 @@ public class DeliveryDTO {
 	private List<Parcel> packages;
 	private Date createdAt;
 	private Date lastUpdateAt;
-	
+
+	private Receiver pickUpDate = null;
+	private Receiver pickUpHourFrom = null;
+	private Receiver pickUpHourTo = null;
+
+	private Receiver deliveryDate = null;
+	private Receiver deliveryHourFrom = null;
+	private Receiver deliveryHourTo = null;
+
+	private Receiver deliveryNote = null;
+
 	public DeliveryDTO(Customer customer, Receiver receiver, List<Parcel> packages) {
 		super();
 		this.status = DeliveryStatus.created;
@@ -28,5 +40,4 @@ public class DeliveryDTO {
 		this.createdAt = new Date();
 		this.lastUpdateAt = new Date();
 	}
-
 }

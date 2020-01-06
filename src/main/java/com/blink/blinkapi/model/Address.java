@@ -32,4 +32,13 @@ public class Address   {
 
   @JsonProperty("zipcode")
   private String zipcode = null;
+
+  @JsonProperty("cap")
+  private String cap = null;
+
+  @JsonProperty("street")
+  private String street = null;
+
+  @JsonProperty("civicNumber")
+  private String civicNumber = null;
 }

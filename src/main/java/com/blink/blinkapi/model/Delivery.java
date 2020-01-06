@@ -17,7 +17,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 @Data
 @Validated
-public class Delivery   {
+public class Delivery {
         @Id
         @GeneratedValue
         @JsonProperty("id")
@@ -33,8 +33,24 @@ public class Delivery   {
         @Valid
         private List<Parcel> packages = null;
 
-        public Delivery id(String id) {
-            this.id = id;
-            return this;
-        }
+        @JsonProperty("pickUpDate")
+        private String pickUpDate = null;
+        @JsonProperty("pickUpHourFrom")
+        private String pickUpHourFrom = null;
+        @JsonProperty("pickUpHourTo")
+        private String pickUpHourTo = null;
+
+        @JsonProperty("deliveryDate")
+        private String deliveryDate = null;
+        @JsonProperty("deliveryHourFrom")
+        private String deliveryHourFrom = null;
+        @JsonProperty("deliveryHourTo")
+        private String deliveryHourTo = null;
+
+        @JsonProperty("deliveryNote")
+        private String deliveryNote = null;
+
+        @JsonProperty("paymentCode")
+        private String paymentCode = null;
+
 }

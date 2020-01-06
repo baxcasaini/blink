@@ -20,4 +20,9 @@ public class LoginController {
         account = accountRepository.save(account);
         return "ok";
     }
+
+    @DeleteMapping("/deleteAllUsers")
+    public void deleteAll() {
+        accountRepository.deleteAll();
+    }
 }

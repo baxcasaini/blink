@@ -16,8 +16,14 @@ public class Customer{
   @JsonProperty("id")
   private String id = null;
 
+  @JsonProperty("type")
+  private String type = null;
+
   @JsonProperty("address")
   private Address address = null;
+
+  @JsonProperty("billingAddress")
+  private Address billingAddress = null;
 
   @JsonProperty("name")
   private String name = null;
@@ -30,4 +36,13 @@ public class Customer{
 
   @JsonProperty("phoneNumber")
   private String phoneNumber = null;
+
+  @JsonProperty("fiscalcode")
+  private String fiscalcode = null;
+
+  @JsonProperty("businessName")
+  private String businessName = null;
+
+  @JsonProperty("vatNumber")
+  private String vatNumber = null;
 }
