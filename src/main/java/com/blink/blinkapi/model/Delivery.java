@@ -53,4 +53,104 @@ public class Delivery {
         @JsonProperty("paymentCode")
         private String paymentCode = null;
 
+		public String getId() {
+			return id;
+		}
+
+		public void setId(String id) {
+			this.id = id;
+		}
+
+		public Customer getCustomer() {
+			return customer;
+		}
+
+		public void setCustomer(Customer customer) {
+			this.customer = customer;
+		}
+
+		public Receiver getReceiver() {
+			return receiver;
+		}
+
+		public void setReceiver(Receiver receiver) {
+			this.receiver = receiver;
+		}
+
+		public List<Parcel> getPackages() {
+			return packages;
+		}
+
+		public void setPackages(List<Parcel> packages) {
+			this.packages = packages;
+		}
+
+		public String getPickUpDate() {
+			return pickUpDate;
+		}
+
+		public void setPickUpDate(String pickUpDate) {
+			this.pickUpDate = pickUpDate;
+		}
+
+		public String getPickUpHourFrom() {
+			return pickUpHourFrom;
+		}
+
+		public void setPickUpHourFrom(String pickUpHourFrom) {
+			this.pickUpHourFrom = pickUpHourFrom;
+		}
+
+		public String getPickUpHourTo() {
+			return pickUpHourTo;
+		}
+
+		public void setPickUpHourTo(String pickUpHourTo) {
+			this.pickUpHourTo = pickUpHourTo;
+		}
+
+		public String getDeliveryDate() {
+			return deliveryDate;
+		}
+
+		public void setDeliveryDate(String deliveryDate) {
+			this.deliveryDate = deliveryDate;
+		}
+
+		public String getDeliveryHourFrom() {
+			return deliveryHourFrom;
+		}
+
+		public void setDeliveryHourFrom(String deliveryHourFrom) {
+			this.deliveryHourFrom = deliveryHourFrom;
+		}
+
+		public String getDeliveryHourTo() {
+			return deliveryHourTo;
+		}
+
+		public void setDeliveryHourTo(String deliveryHourTo) {
+			this.deliveryHourTo = deliveryHourTo;
+		}
+
+		public String getDeliveryNote() {
+			return deliveryNote;
+		}
+
+		public void setDeliveryNote(String deliveryNote) {
+			this.deliveryNote = deliveryNote;
+		}
+
+		public String getPaymentCode() {
+			return paymentCode;
+		}
+
+		public void setPaymentCode(String paymentCode) {
+			this.paymentCode = paymentCode;
+		}
+        
+        
+        
+        
+
 }
