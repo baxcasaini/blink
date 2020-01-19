@@ -1,8 +1,5 @@
 package com.blink.blinkapi.model;
 
-import java.util.Objects;
-
-import lombok.Data;
 import org.springframework.validation.annotation.Validated;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -10,7 +7,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 /**
  * Delivery
  */
-@Data
 @Validated
 public class Customer{
   @JsonProperty("id")

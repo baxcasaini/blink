@@ -1,8 +1,5 @@
 package com.blink.blinkapi.model;
 
-import java.util.Objects;
-
-import lombok.Data;
 import org.springframework.validation.annotation.Validated;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -12,7 +9,6 @@ import com.fasterxml.jackson.annotation.JsonValue;
 /**
  * Parcel
  */
-@Data
 @Validated
 public class Parcel   {
   @JsonProperty("description")

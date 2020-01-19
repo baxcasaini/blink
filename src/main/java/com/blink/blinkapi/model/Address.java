@@ -1,15 +1,11 @@
 package com.blink.blinkapi.model;
 
-import java.util.Objects;
-
 import com.fasterxml.jackson.annotation.JsonProperty;
-import lombok.Data;
 import org.springframework.validation.annotation.Validated;
 
 /**
  * Address
  */
-@Data
 @Validated
 public class Address   {
   @JsonProperty("road")

@@ -32,7 +32,7 @@ public class BlinkApiApplication
 		return new CommandLineRunner() {
 			@Override
 			public void run(String... arg0) throws Exception {
-				accountRepository.save(new Account("username", "password"));
+				accountRepository.save(new Account("username", "password", "test", 10));
 			}
 		};
 	}
