@@ -21,45 +21,22 @@ public class Parcel   {
   @JsonProperty("price")
   private String price = null;
 
-  /**
-   * Gets or Sets type
-   */
-  public enum TypeEnum {
-    COMMON("COMMON"),
-    
-    FOOD("FOOD"),
-    
-    FRAGILE("FRAGILE");
-
-    private String value;
-
-    TypeEnum(String value) {
-      this.value = value;
-    }
-
-    @Override
-    @JsonValue
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    @JsonCreator
-    public static TypeEnum fromValue(String text) {
-      for (TypeEnum b : TypeEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
-          return b;
-        }
-      }
-      return null;
-    }
-  }
-  @JsonProperty("type")
-  private String type = null;
-
   @JsonProperty("weight")
   private Integer weight = null;
 
   @JsonProperty("dimension")
   private Dimension dimension = null;
+  
+  @JsonProperty("notStackable")
+  private boolean notStackable = false;
+
+  @JsonProperty("fragile")
+  private boolean fragile = false;
+  
+  @JsonProperty("notFlippable")
+  private boolean notFlippable = false;
+  
+  @JsonProperty("note")
+  private String note = null;
 
 }

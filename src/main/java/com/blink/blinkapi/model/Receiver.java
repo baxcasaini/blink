@@ -17,9 +17,6 @@ public class Receiver {
 	@JsonProperty("id")
 	private String id = null;
 
-	@JsonProperty("type")
-	private String type = null;
-
 	@JsonProperty("address")
 	private Address address = null;
 
@@ -34,13 +31,8 @@ public class Receiver {
 
 	@JsonProperty("phoneNumber")
 	private String phoneNumber = null;
+	
+	@JsonProperty("note")
+	private String note = null;
 
-	@JsonProperty("fiscalcode")
-	private String fiscalcode = null;
-
-	@JsonProperty("businessName")
-	private String businessName = null;
-
-	@JsonProperty("vatNumber")
-	private String vatNumber = null;
 }

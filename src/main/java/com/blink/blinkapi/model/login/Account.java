@@ -1,39 +1,64 @@
 package com.blink.blinkapi.model.login;
 
-import lombok.Data;
+import java.util.UUID;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
-@Data
+import org.bson.internal.Base64;
+
+
 public class Account {
 
     @Id
     @GeneratedValue
     private String id;
-    private String username;
-    private String password;
+    private String codiceAccount;
+    private String email;
+    private int blinkCoins;
+    
 
     public Account(){}
 
-    public Account(String username, String password) {
-        this.username = username;
-        this.password = password;
+    public Account(String email, int blinkCoins) {
+    	this.email = email;
+    	//valutare di accorciare la stringa codiceAccount
+    	this.codiceAccount =Long.toString(UUID.randomUUID().getMostSignificantBits());
+    	//DigestUtils.md5DigestAsHex(UUID.randomUUID().toString().getBytes());
+    	this.blinkCoins = blinkCoins;
     }
 
-	public String getUsername() {
-		return username;
+	public String getId() {
+		return id;
 	}
 
-	public void setUsername(String username) {
-		this.username = username;
+	public void setId(String id) {
+		this.id = id;
 	}
 
-	public String getPassword() {
-		return password;
+	public String getCodiceAccount() {
+		return codiceAccount;
 	}
 
-	public void setPassword(String password) {
-		this.password = password;
+	public void setCodiceAccount(String codiceAccount) {
+		this.codiceAccount = codiceAccount;
 	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public int getBlinkCoins() {
+		return blinkCoins;
+	}
+
+	public void setBlinkCoins(int blinkCoins) {
+		this.blinkCoins = blinkCoins;
+	}
+
+	
 }

@@ -24,7 +24,7 @@ public class Delivery {
         private String id = null;
 
         @JsonProperty("customer")
-        private Customer customer = null;
+        private String customer = null;
 
         @JsonProperty("receiver")
         private Receiver receiver = null;
@@ -35,18 +35,16 @@ public class Delivery {
 
         @JsonProperty("pickUpDate")
         private String pickUpDate = null;
+        
         @JsonProperty("pickUpHourFrom")
         private String pickUpHourFrom = null;
+        
         @JsonProperty("pickUpHourTo")
         private String pickUpHourTo = null;
-
-        @JsonProperty("deliveryDate")
-        private String deliveryDate = null;
-        @JsonProperty("deliveryHourFrom")
-        private String deliveryHourFrom = null;
-        @JsonProperty("deliveryHourTo")
-        private String deliveryHourTo = null;
-
+        
+        @JsonProperty("serviceLevel")
+        private ServiceLevel serviceLevel = null;
+        
         @JsonProperty("deliveryNote")
         private String deliveryNote = null;
 
@@ -61,11 +59,11 @@ public class Delivery {
 			this.id = id;
 		}
 
-		public Customer getCustomer() {
+		public String getCustomer() {
 			return customer;
 		}
 
-		public void setCustomer(Customer customer) {
+		public void setCustomer(String customer) {
 			this.customer = customer;
 		}
 
@@ -109,28 +107,13 @@ public class Delivery {
 			this.pickUpHourTo = pickUpHourTo;
 		}
 
-		public String getDeliveryDate() {
-			return deliveryDate;
+		
+		public ServiceLevel getServiceLevel() {
+			return serviceLevel;
 		}
 
-		public void setDeliveryDate(String deliveryDate) {
-			this.deliveryDate = deliveryDate;
-		}
-
-		public String getDeliveryHourFrom() {
-			return deliveryHourFrom;
-		}
-
-		public void setDeliveryHourFrom(String deliveryHourFrom) {
-			this.deliveryHourFrom = deliveryHourFrom;
-		}
-
-		public String getDeliveryHourTo() {
-			return deliveryHourTo;
-		}
-
-		public void setDeliveryHourTo(String deliveryHourTo) {
-			this.deliveryHourTo = deliveryHourTo;
+		public void setServiceLevel(ServiceLevel serviceLevel) {
+			this.serviceLevel = serviceLevel;
 		}
 
 		public String getDeliveryNote() {

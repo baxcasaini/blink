@@ -11,34 +11,23 @@ import org.springframework.validation.annotation.Validated;
  */
 @Data
 @Validated
-public class Address   {
-  @JsonProperty("road")
-  private String road = null;
+public class Address {
+	@JsonProperty("street")
+	private String street = null;
+	
+	@JsonProperty("number")
+	private String number = null;
 
-  @JsonProperty("number")
-  private String number = null;
+	@JsonProperty("normalized")
+	private Boolean normalized = false;
 
-  @JsonProperty("normalized")
-  private Boolean normalized = false;
+	@JsonProperty("province")
+	private String province = null;
 
-  @JsonProperty("province")
-  private String province = null;
+	@JsonProperty("city")
+	private String city = null;
 
-  @JsonProperty("city")
-  private String city = null;
+	@JsonProperty("zipcode")
+	private String zipcode = null;
 
-  @JsonProperty("country")
-  private String country = null;
-
-  @JsonProperty("zipcode")
-  private String zipcode = null;
-
-  @JsonProperty("cap")
-  private String cap = null;
-
-  @JsonProperty("street")
-  private String street = null;
-
-  @JsonProperty("civicNumber")
-  private String civicNumber = null;
 }

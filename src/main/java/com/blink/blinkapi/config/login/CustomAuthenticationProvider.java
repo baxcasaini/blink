@@ -28,7 +28,7 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
             .toString();
        for(Entry<String, String> x: userList.entrySet()) {
     	   
-      
+      //Controlla nella mappa degli utenti se è abilitato per l'autenticazione
         if (x.getKey().equals(username) && x.getValue().equals(password)) {
             return new UsernamePasswordAuthenticationToken
               (username, password, Collections.emptyList());

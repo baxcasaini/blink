@@ -1,4 +1,4 @@
-package blink;
+package com.blink.blinkapi;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

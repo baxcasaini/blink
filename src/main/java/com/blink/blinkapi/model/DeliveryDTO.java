@@ -25,20 +25,18 @@ public class DeliveryDTO {
 	private Receiver pickUpHourFrom = null;
 	private Receiver pickUpHourTo = null;
 
-	private Receiver deliveryDate = null;
-	private Receiver deliveryHourFrom = null;
-	private Receiver deliveryHourTo = null;
+	private ServiceLevel serviceLevel = null;
 
-	private Receiver deliveryNote = null;
-
-	public DeliveryDTO(Customer customer, Receiver receiver, List<Parcel> packages) {
+	public DeliveryDTO(Customer customer, Receiver receiver, List<Parcel> packages, ServiceLevel serviceLevel) {
 		super();
 		this.status = DeliveryStatus.created;
 		this.customer = customer;
 		this.receiver = receiver;
 		this.packages = packages;
+		this.serviceLevel = serviceLevel;
 		this.createdAt = new Date();
 		this.lastUpdateAt = new Date();
+		
 	}
 
 	public String getId() {
@@ -121,37 +119,15 @@ public class DeliveryDTO {
 		this.pickUpHourTo = pickUpHourTo;
 	}
 
-	public Receiver getDeliveryDate() {
-		return deliveryDate;
+	public ServiceLevel getServiceLevel() {
+		return serviceLevel;
 	}
 
-	public void setDeliveryDate(Receiver deliveryDate) {
-		this.deliveryDate = deliveryDate;
+	public void setServiceLevel(ServiceLevel serviceLevel) {
+		this.serviceLevel = serviceLevel;
 	}
 
-	public Receiver getDeliveryHourFrom() {
-		return deliveryHourFrom;
-	}
-
-	public void setDeliveryHourFrom(Receiver deliveryHourFrom) {
-		this.deliveryHourFrom = deliveryHourFrom;
-	}
-
-	public Receiver getDeliveryHourTo() {
-		return deliveryHourTo;
-	}
-
-	public void setDeliveryHourTo(Receiver deliveryHourTo) {
-		this.deliveryHourTo = deliveryHourTo;
-	}
-
-	public Receiver getDeliveryNote() {
-		return deliveryNote;
-	}
-
-	public void setDeliveryNote(Receiver deliveryNote) {
-		this.deliveryNote = deliveryNote;
-	}
+	
 	
 	
 }

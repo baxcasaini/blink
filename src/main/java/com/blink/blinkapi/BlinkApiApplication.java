@@ -1,23 +1,17 @@
 package com.blink.blinkapi;
 
-import com.blink.blinkapi.controller.DeliveryController;
-import com.blink.blinkapi.model.Delivery;
-import com.blink.blinkapi.model.login.Account;
-import com.blink.blinkapi.repository.login.AccountRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
-import org.springframework.context.annotation.Bean;
+
+import com.blink.blinkapi.controller.DeliveryController;
 
 @SpringBootApplication(exclude = { SecurityAutoConfiguration.class })
 public class BlinkApiApplication
 //		implements CommandLineRunner
 {
 
-	final
-	DeliveryController deliveryController;
+	final DeliveryController deliveryController;
 
 	public BlinkApiApplication(DeliveryController deliveryController) {
 		this.deliveryController = deliveryController;
@@ -26,16 +20,16 @@ public class BlinkApiApplication
 	public static void main(String[] args) {
 		SpringApplication.run(BlinkApiApplication.class, args);
 	}
-
-	@Bean
-	CommandLineRunner init(final AccountRepository accountRepository) {
-		return new CommandLineRunner() {
-			@Override
-			public void run(String... arg0) throws Exception {
-				accountRepository.save(new Account("username", "password"));
-			}
-		};
-	}
+//
+//	@Bean
+//	CommandLineRunner init(final AccountRepository accountRepository) {
+//		return new CommandLineRunner() {
+//			@Override
+//			public void run(String... arg0) throws Exception {
+////				accountRepository.save(new Account("username", 100));
+//			}
+//		};
+//	}
 
 //	@Override
 //	public void run(String... args) throws Exception {
