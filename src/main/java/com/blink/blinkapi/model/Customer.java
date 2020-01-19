@@ -41,4 +41,7 @@ public class Customer{
 
   @JsonProperty("vatNumber")
   private String vatNumber = null;
+
+  @JsonProperty("service")
+  private Service service = null;
 }

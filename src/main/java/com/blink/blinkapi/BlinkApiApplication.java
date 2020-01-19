@@ -27,15 +27,15 @@ public class BlinkApiApplication
 		SpringApplication.run(BlinkApiApplication.class, args);
 	}
 
-	@Bean
-	CommandLineRunner init(final AccountRepository accountRepository) {
-		return new CommandLineRunner() {
-			@Override
-			public void run(String... arg0) throws Exception {
-				accountRepository.save(new Account("username", "password", "test", 10));
-			}
-		};
-	}
+//	@Bean
+//	CommandLineRunner init(final AccountRepository accountRepository) {
+//		return new CommandLineRunner() {
+//			@Override
+//			public void run(String... arg0) throws Exception {
+//				accountRepository.save(new Account("username", "password", "test", 10));
+//			}
+//		};
+//	}
 
 //	@Override
 //	public void run(String... args) throws Exception {

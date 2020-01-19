@@ -12,7 +12,7 @@ import com.blink.blinkapi.repository.DeliveryRepository;
 @RestController
 @RequestMapping("/deliveries")
 //@CrossOrigin(origins = "http://blink-s3.s3-website.eu-west-3.amazonaws.com")
-@CrossOrigin(origins = "http://localhost:8080")
+@CrossOrigin(origins = "http://localhost:4200")
 public class DeliveryController {
 
     @Autowired

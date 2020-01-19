@@ -1,19 +1,51 @@
 package com.blink.blinkapi.model.login;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+import org.springframework.validation.annotation.Validated;
+
+@Validated
 public class Account {
 
     private String id;
+
+    @JsonProperty("username")
     private String username;
+    @JsonProperty("password")
     private String password;
-    private String clienCode;
+    @JsonProperty("clientCode")
+    private String clientCode;
+    @JsonProperty("clientAmount")
     private Integer clientAmount;
 
-    public Account(){}
+    public String getUsername() {
+        return username;
+    }
 
-    public Account(String username, String password, String clientCode, Integer clientAmount) {
+    public void setUsername(String username) {
         this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
         this.password = password;
-        this.clienCode = clientCode;
+    }
+
+    public String getClientCode() {
+        return clientCode;
+    }
+
+    public void setClientCode(String clientCode) {
+        this.clientCode = clientCode;
+    }
+
+    public Integer getClientAmount() {
+        return clientAmount;
+    }
+
+    public void setClientAmount(Integer clientAmount) {
         this.clientAmount = clientAmount;
     }
 }

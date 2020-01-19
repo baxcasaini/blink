@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/login")
 //@CrossOrigin(origins = "http://blink-s3.s3-website.eu-west-3.amazonaws.com")
-@CrossOrigin(origins = "http://localhost:8080")
+//@CrossOrigin(origins = "http://localhost:8080")
 public class LoginController {
 
     private final AccountRepository accountRepository;
