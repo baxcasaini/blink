@@ -1,4 +1,4 @@
-package com.blink.blinkapi.config.login;
+package com.blink.blinkapi.security.config;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -6,65 +6,49 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
+
+import com.blink.blinkapi.security.service.TokenAuthenticationService;
 
 @Configuration
 @EnableWebSecurity
 public class SecSecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Autowired
-    CustomAuthenticationProvider customAuthProvider;
- 
-    @Override
-    public void configure(AuthenticationManagerBuilder auth) 
-      throws Exception {
- 
-        auth.authenticationProvider(customAuthProvider);
-        
-    }
+	private  TokenAuthenticationService tokenAuthenticationService;
+
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
-    @Bean
-    public Map<String,String> userMapAuth() {
-    	Map<String,String> userList = new HashMap<>();
-    	userList.putIfAbsent("admin", "admin");
-    	//QUI POSSIAMO LEGGERE DA DB TUTTI GLI UTENTI AUTORIZZATI
-    	return userList;
-    }
+
     @Override
     protected void configure(HttpSecurity http) throws Exception
     {
-        http.antMatcher("/**")
-            .csrf().disable()
-            .authorizeRequests().anyRequest().permitAll()
-//            .authorizeRequests().anyRequest().authenticated()
-//            .authorizeRequests().antMatchers("/", "/login**").permitAll() 
-//            .anyRequest().authenticated()
-            .and()
-            .httpBasic()
-            .and()
-            .cors();
+    	 http.authorizeRequests()
+         .antMatchers("/**").permitAll()
+         .anyRequest().authenticated()
+         .and()
+         .addFilterBefore(new AuthenticationTokenFilter(tokenAuthenticationService),
+                 UsernamePasswordAuthenticationFilter.class)
+//         .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+//         .and()
+         .csrf().disable();
+    	
+    	
+    	
+    
     }
 
-//    @Autowired
-//    public void configureGlobal(AuthenticationManagerBuilder auth)
-//            throws Exception
-//    {
-//        auth.inMemoryAuthentication()
-//                .withUser("admin")
-//                .password("{noop}password")
-//                .roles("USER");
-//    }
 
     @Bean
     CorsConfigurationSource corsConfigurationSource() {

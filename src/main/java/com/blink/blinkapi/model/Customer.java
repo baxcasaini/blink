@@ -14,8 +14,8 @@ public class Customer {
 	@JsonProperty("id")
 	private String id = null;
 
-	@JsonProperty("customerCode")
-	private String customerCode = null;
+	@JsonProperty("password")
+	private String password = null;
 
 	@JsonProperty("type")
 	private String type = null;
@@ -62,12 +62,14 @@ public class Customer {
 		this.id = id;
 	}
 
-	public String getCustomerCode() {
-		return customerCode;
+	
+
+	public String getPassword() {
+		return password;
 	}
 
-	public void setCustomerCode(String customerCode) {
-		this.customerCode = customerCode;
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
 	public String getType() {
@@ -168,7 +170,7 @@ public class Customer {
 
 	@Override
 	public String toString() {
-		return "{\n\"id\":\"" + id + "\",\n \"customerCode\":\"" + customerCode + "\",\n \"type\":\"" + type
+		return "{\n\"id\":\"" + id + "\",\n \"password\":\"" + password + "\",\n \"type\":\"" + type
 				+ "\",\n \"address\":\"" + address + "\",\n \"billingAddress\":\"" + billingAddress
 				+ "\",\n \"name\":\"" + name + "\",\n \"lastname\":\"" + lastname + "\",\n \"email\":\"" + email
 				+ "\",\n \"phoneNumber\":\"" + phoneNumber + "\",\n \"fiscalcode\":\"" + fiscalcode

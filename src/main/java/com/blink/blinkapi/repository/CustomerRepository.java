@@ -8,6 +8,6 @@ public interface CustomerRepository extends MongoRepository<Customer, String> {
 
     public Customer findByEmail(String email);
     
-    public Customer findByCustomerCode(String customerCode);
+    //public Customer findByCustomerCode(String customerCode);
 
 }

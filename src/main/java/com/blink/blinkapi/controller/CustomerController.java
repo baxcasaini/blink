@@ -3,7 +3,10 @@ package com.blink.blinkapi.controller;
 import java.util.List;
 
 import org.apache.commons.lang3.RandomStringUtils;
+import org.apache.tomcat.util.codec.binary.Base64;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,9 +15,12 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
 
 import com.blink.blinkapi.model.Customer;
+import com.blink.blinkapi.model.login.Account;
 import com.blink.blinkapi.repository.CustomerRepository;
+import com.blink.blinkapi.security.model.User;
 
 @RestController
 @RequestMapping("/customers")
@@ -24,6 +30,8 @@ public class CustomerController {
 
 	@Autowired
 	private CustomerRepository customerRepository;
+	
+	private  final String URL = "http://localhost:8081/api/signup";
 
 	@GetMapping
 	public List<Customer> getAll() {
@@ -37,10 +45,10 @@ public class CustomerController {
 		return customerRepository.findById(id).get();
 	}
 	
-	@GetMapping("/{customerCode}")
-	public Customer getByCustomerCode(@PathVariable("customerCode") String customerCode) {
+	@GetMapping("/{email}")
+	public Customer getByCustomerCode(@PathVariable("email") String email) {
 		//id = "5de25c4073302040c724e19e";
-		return customerRepository.findByCustomerCode(customerCode);
+		return customerRepository.findByEmail(email);
 	}
 
 	@PostMapping
@@ -48,9 +56,17 @@ public class CustomerController {
 		//CHECK CUSTOMER
 		customer.setId(null);
 		//FIXME ALE da capire! viene generata una stringa random di 8 char come customer code
-		customer.setCustomerCode(RandomStringUtils.random(8, true, true));
-		System.out.println(customer);
-		return customerRepository.insert(customer);
+		if(customer.getPassword() == null)
+			customer.setPassword(RandomStringUtils.random(8, true, true));
+		else {
+			customer.setPassword(Base64.encodeBase64String(customer.getPassword().getBytes()));
+		}
+		customer = customerRepository.insert(customer);
+		RestTemplate rt = new RestTemplate();
+    	if(rt.postForEntity(URL, new Account(customer.getEmail(), customer.getPassword()), Account.class).getStatusCode() != HttpStatus.OK)
+    		//GESTIRE ERRORI;
+    		System.err.println("ERRORE CUSTOMER NON INSERITO CORRRETTAMENTE NELLA TABELLA USERS");
+		return customer;
 	}
 
 	@DeleteMapping("/{id}")

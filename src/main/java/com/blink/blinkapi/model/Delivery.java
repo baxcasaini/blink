@@ -23,9 +23,6 @@ public class Delivery {
         @JsonProperty("id")
         private String id = null;
 
-        @JsonProperty("customer")
-        private String customer = null;
-
         @JsonProperty("receiver")
         private Receiver receiver = null;
 
@@ -57,14 +54,6 @@ public class Delivery {
 
 		public void setId(String id) {
 			this.id = id;
-		}
-
-		public String getCustomer() {
-			return customer;
-		}
-
-		public void setCustomer(String customer) {
-			this.customer = customer;
 		}
 
 		public Receiver getReceiver() {
