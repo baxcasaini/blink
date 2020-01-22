@@ -39,8 +39,8 @@ public class Delivery {
         @JsonProperty("pickUpHourTo")
         private String pickUpHourTo = null;
         
-        @JsonProperty("serviceLevel")
-        private ServiceLevel serviceLevel = null;
+        @JsonProperty("serviceOption")
+        private ServiceOption serviceOption = null;
         
         @JsonProperty("deliveryNote")
         private String deliveryNote = null;
@@ -97,12 +97,12 @@ public class Delivery {
 		}
 
 		
-		public ServiceLevel getServiceLevel() {
-			return serviceLevel;
+		public ServiceOption getServiceOption() {
+			return serviceOption;
 		}
 
-		public void setServiceLevel(ServiceLevel serviceLevel) {
-			this.serviceLevel = serviceLevel;
+		public void setServiceOption(ServiceOption serviceOption) {
+			this.serviceOption = serviceOption;
 		}
 
 		public String getDeliveryNote() {

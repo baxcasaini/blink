@@ -16,7 +16,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  * Delivery
  */
 @Validated
-public class ServiceLevelRequest {
+public class ServiceOptionRequest {
         
 
         @JsonProperty("customer")

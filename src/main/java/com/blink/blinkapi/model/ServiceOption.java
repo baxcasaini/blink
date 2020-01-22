@@ -6,20 +6,20 @@ import org.springframework.validation.annotation.Validated;
 
 
 @Validated
-public class ServiceLevel   {
+public class ServiceOption   {
 
-	private ServiceLevelType type;
+	private ServiceOptionType type;
 	  
 	private List<TimeSlot> timeSlot;
 		
 	private String note;
 
 	
-	public ServiceLevelType getType() {
+	public ServiceOptionType getType() {
 		return type;
 	}
 
-	public void setType(ServiceLevelType type) {
+	public void setType(ServiceOptionType type) {
 		this.type = type;
 	}
 

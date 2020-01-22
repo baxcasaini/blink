@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -24,6 +25,8 @@ import com.blink.blinkapi.model.DeliveryDTO;
 import com.blink.blinkapi.repository.CustomerRepository;
 import com.blink.blinkapi.repository.DeliveryRepository;
 import com.blink.blinkapi.security.model.UserAuthentication;
+
+import io.jsonwebtoken.lang.Assert;
 
 @RestController
 @RequestMapping("/deliveries")
@@ -69,6 +72,7 @@ public class DeliveryController {
 	}
 
 	@PatchMapping("/{id}")
+	@Transactional
 	public Delivery update(@PathVariable("id") String id, @RequestBody Delivery delivery) {
 		// TODO ALE Validazioni dei dati
 		DeliveryDTO deliveryUp = deliveryRepository.findById(id).get();
@@ -80,8 +84,9 @@ public class DeliveryController {
 			deliveryUp.setReceiver(delivery.getReceiver());
 		if (delivery.getPackages() != null)
 			deliveryUp.setPackages(delivery.getPackages());
-		if (delivery.getServiceLevel() != null)
-			deliveryUp.setServiceLevel(delivery.getServiceLevel());
+		if (delivery.getServiceOption() != null)
+			deliveryUp.setServiceOption(delivery.getServiceOption());
+
 		return getDeliveryFromDTO(deliveryRepository.save(deliveryUp));
 	}
 
@@ -92,19 +97,25 @@ public class DeliveryController {
 		del.setId(dto.getId());
 		del.setReceiver(dto.getReceiver());
 		del.setPackages(dto.getPackages());
-		del.setServiceLevel(dto.getServiceLevel());
+		del.setServiceOption(dto.getServiceOption());
 		return del;
 	}
 
+	@Transactional
 	private DeliveryDTO getDTOfromDelivery(Delivery delivery) {
 		UserAuthentication sessionUser = (UserAuthentication) SecurityContextHolder.getContext().getAuthentication();
 		Customer customer = customerRepository.findByEmail((String) sessionUser.getPrincipal());
-		
+
 		// TODO ALE Validazioni dei dati, magari con un metodo privato
-		if (customer != null)
+
+		Assert.isTrue(delivery.getPackages().size() == 1);
+		if (customer != null) {
+			double costoSpedizione = delivery.getServiceOption().getTimeSlot().get(0).getCost();
+			customer.setBlinkCoins(customer.getBlinkCoins() - costoSpedizione);
+			customerRepository.save(customer);
 			return new DeliveryDTO(customer, delivery.getReceiver(), delivery.getPackages(),
-					delivery.getServiceLevel());
-		else
+					delivery.getServiceOption());
+		} else
 			throw new IllegalArgumentException("Customer NOT found");
 	}
 
@@ -115,9 +126,10 @@ public class DeliveryController {
 		}
 		return list;
 	}
+
 	@ExceptionHandler(Exception.class)
 	public ResponseEntity<?> handleException(Exception e) {
-		return new ResponseEntity<String>(e.getMessage(),HttpStatus.UNAUTHORIZED);
-		
+		return new ResponseEntity<String>(e.getMessage(), HttpStatus.UNAUTHORIZED);
+
 	}
 }

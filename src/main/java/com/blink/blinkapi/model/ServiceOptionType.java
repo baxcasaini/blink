@@ -1,13 +1,13 @@
 package com.blink.blinkapi.model;
 
-public enum ServiceLevelType {
+public enum ServiceOptionType {
 	urgent("URGENT"), 
 	timeSlot("TIMESLOT"),
 	Standard("STANDARD");
 
 	public String value;
 
-	ServiceLevelType(String value) {
+	ServiceOptionType(String value) {
 		this.value = value;
 	}
 
@@ -15,8 +15,8 @@ public enum ServiceLevelType {
 		return value;
 	}
 	
-	public ServiceLevelType fromValue(String value) {
-		for(ServiceLevelType v : ServiceLevelType.values()) {
+	public ServiceOptionType fromValue(String value) {
+		for(ServiceOptionType v : ServiceOptionType.values()) {
 			if(v.getValue().equals(value)) {
 				return v;
 			}

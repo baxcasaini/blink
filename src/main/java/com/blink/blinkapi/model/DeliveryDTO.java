@@ -25,15 +25,15 @@ public class DeliveryDTO {
 	private Receiver pickUpHourFrom = null;
 	private Receiver pickUpHourTo = null;
 
-	private ServiceLevel serviceLevel = null;
+	private ServiceOption serviceOption = null;
 
-	public DeliveryDTO(Customer customer, Receiver receiver, List<Parcel> packages, ServiceLevel serviceLevel) {
+	public DeliveryDTO(Customer customer, Receiver receiver, List<Parcel> packages, ServiceOption serviceOption) {
 		super();
 		this.status = DeliveryStatus.created;
 		this.customer = customer;
 		this.receiver = receiver;
 		this.packages = packages;
-		this.serviceLevel = serviceLevel;
+		this.serviceOption = serviceOption;
 		this.createdAt = new Date();
 		this.lastUpdateAt = new Date();
 		
@@ -119,12 +119,12 @@ public class DeliveryDTO {
 		this.pickUpHourTo = pickUpHourTo;
 	}
 
-	public ServiceLevel getServiceLevel() {
-		return serviceLevel;
+	public ServiceOption getServiceOption() {
+		return serviceOption;
 	}
 
-	public void setServiceLevel(ServiceLevel serviceLevel) {
-		this.serviceLevel = serviceLevel;
+	public void setServiceOption(ServiceOption serviceOption) {
+		this.serviceOption = serviceOption;
 	}
 
 	

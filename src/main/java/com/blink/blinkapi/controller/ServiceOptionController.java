@@ -12,25 +12,25 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.blink.blinkapi.model.ServiceLevel;
-import com.blink.blinkapi.model.ServiceLevelRequest;
-import com.blink.blinkapi.model.ServiceLevelType;
+import com.blink.blinkapi.model.ServiceOption;
+import com.blink.blinkapi.model.ServiceOptionRequest;
+import com.blink.blinkapi.model.ServiceOptionType;
 import com.blink.blinkapi.model.TimeSlot;
 
 @RestController
 @RequestMapping("/servicelevel")
 //@CrossOrigin(origins = "http://blink-s3.s3-website.eu-west-3.amazonaws.com")
 @CrossOrigin(origins = "http://localhost:8080")
-public class ServiceLevelController {
+public class ServiceOptionController {
 
 	//TODO ALE preventivo spedizione e SERVICE LEVEL
 	@PostMapping
-	public List<ServiceLevel> create(@RequestBody ServiceLevelRequest slRequest) {
+	public List<ServiceOption> create(@RequestBody ServiceOptionRequest slRequest) {
 		//TODO ALE CHECK INFORMATION
 		//FA CAGARE MA PER IL MOMENTO FORNISCE UN MOCK SENSATO IN RISPOSTA
-		List<ServiceLevel> listSL = new ArrayList<>();
-		ServiceLevel sl1 = new ServiceLevel();
-		sl1.setType(ServiceLevelType.urgent);
+		List<ServiceOption> listSL = new ArrayList<>();
+		ServiceOption sl1 = new ServiceOption();
+		sl1.setType(ServiceOptionType.urgent);
 			List<TimeSlot> timeSlotSL1 = new ArrayList<>();
 				TimeSlot t1SL1 = new TimeSlot();
 				t1SL1.setDate(LocalDate.now());
@@ -47,8 +47,8 @@ public class ServiceLevelController {
 		sl1.setTimeSlot(timeSlotSL1);
 		
 		
-		ServiceLevel sl2 = new ServiceLevel();
-		sl2.setType(ServiceLevelType.timeSlot);
+		ServiceOption sl2 = new ServiceOption();
+		sl2.setType(ServiceOptionType.timeSlot);
 			List<TimeSlot> timeSlotSL2 = new ArrayList<>();
 				TimeSlot t1SL2 = new TimeSlot();
 				t1SL2.setDate(LocalDate.now().plus(1,ChronoUnit.DAYS));
@@ -65,8 +65,8 @@ public class ServiceLevelController {
 		sl2.setTimeSlot(timeSlotSL2);
 		
 		
-		ServiceLevel sl3 = new ServiceLevel();
-		sl3.setType(ServiceLevelType.Standard);
+		ServiceOption sl3 = new ServiceOption();
+		sl3.setType(ServiceOptionType.Standard);
 			List<TimeSlot> timeSlotSL3 = new ArrayList<>();
 				TimeSlot t1SL3 = new TimeSlot();
 				t1SL3.setDate(LocalDate.now().plus(1,ChronoUnit.DAYS));
